@@ -468,11 +468,19 @@ def assess_lawful_basis(
         scores["legitimate_interests"] = 4
         if involves_children:
             scores["legitimate_interests"] -= 2  # Children's interests weigh heavily
+        # PECR: marketing to non-customers requires consent, not LI
+        marketing_terms = ["marketing", "newsletter", "direct mail", "promotional"]
+        if any(kw in purpose_lower for kw in marketing_terms) and not existing_relationship:
+            scores["legitimate_interests"] = 2  # Demote LI — consent is correct basis per PECR Reg 22
 
     # Consent
     consent_keywords = ["newsletter", "marketing", "cookie", "tracking", "share with third", "profiling", "survey"]
     if any(kw in purpose_lower for kw in consent_keywords):
         scores["consent"] = 4
+        # Boost consent for marketing without existing relationship (PECR requirement)
+        marketing_terms = ["marketing", "newsletter", "direct mail", "promotional"]
+        if any(kw in purpose_lower for kw in marketing_terms) and not existing_relationship:
+            scores["consent"] = 5  # PECR Regulation 22: consent required for unsolicited marketing
 
     # Public task
     if is_public_authority:
