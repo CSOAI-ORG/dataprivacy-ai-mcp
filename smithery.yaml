@@ -1,0 +1,10 @@
+name: dataprivacy-ai-mcp
+description: "MEOK AI Labs — Built by MEOK AI Labs | https://dataprivacyof.ai"
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/dataprivacy-ai-mcp
+license: MIT
+categories: [Privacy, Compliance]
+tags: [data-privacy, gdpr, compliance, pii-detection, privacy-regulation]
+runtime: python
+entrypoint: server.py

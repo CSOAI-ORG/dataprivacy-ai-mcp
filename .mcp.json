@@ -1,0 +1,25 @@
+{
+  "name": "dataprivacy-ai-mcp",
+  "description": "MEOK AI Labs \u2014 Built by MEOK AI Labs | https://dataprivacyof.ai",
+  "vendor": "MEOK AI Labs",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/CSOAI-ORG/dataprivacy-ai-mcp",
+  "runtime": "python",
+  "entrypoint": "server.py",
+  "tools": [
+    "classify_personal_data",
+    "assess_lawful_basis",
+    "generate_dpia",
+    "check_data_transfer",
+    "calculate_breach_severity",
+    "generate_privacy_notice"
+  ],
+  "categories": [
+    "Privacy",
+    "Compliance"
+  ],
+  "pricing": {
+    "free": "50 calls/day",
+    "pro": "$9/mo"
+  }
+}
