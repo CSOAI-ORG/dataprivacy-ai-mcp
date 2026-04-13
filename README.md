@@ -1,55 +1,59 @@
 # DataPrivacy.AI MCP Server
 
-**GDPR & Privacy Compliance AI** | Built by [MEOK AI Labs](https://meok.ai)
+> **By [MEOK AI Labs](https://meok.ai)** — Sovereign AI tools for everyone.
 
-MCP server for GDPR personal data classification, lawful basis assessment, DPIA generation, international data transfer checks, breach severity scoring, and privacy notice generation. Covers UK GDPR and EU GDPR.
+GDPR and privacy compliance AI. Classify personal data, assess lawful basis for processing, generate DPIAs, check international data transfer legality, score breach severity, and generate Article 13/14 privacy notices.
+
+[![MCPize](https://img.shields.io/badge/MCPize-Listed-blue)](https://mcpize.com/mcp/dataprivacy-ai)
+[![MIT License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `classify_personal_data` | Classify data fields as personal/special category/anonymous per GDPR Art 4 & 9 |
-| `assess_lawful_basis` | Determine appropriate lawful basis for processing per Article 6 |
-| `generate_dpia` | Generate Data Protection Impact Assessment template per Article 35 |
-| `check_data_transfer` | Assess legality of international transfers (adequacy, SCCs, BCRs) per Chapter V |
-| `calculate_breach_severity` | Score breach severity and determine 72-hour ICO notification requirement |
-| `generate_privacy_notice` | Generate Article 13/14 compliant privacy notice |
+| `classify_personal_data` | Classify data fields as personal, special category, or anonymous |
+| `assess_lawful_basis` | Determine appropriate lawful basis for processing personal data |
+| `generate_dpia` | Generate a Data Protection Impact Assessment per GDPR Article 35 |
+| `check_data_transfer` | Assess legality of international data transfers under GDPR |
+| `calculate_breach_severity` | Score breach severity and determine ICO notification requirements |
+| `generate_privacy_notice` | Generate an Article 13/14 compliant privacy notice |
 
 ## Quick Start
 
 ```bash
 pip install mcp
+git clone https://github.com/CSOAI-ORG/dataprivacy-ai-mcp.git
+cd dataprivacy-ai-mcp
 python server.py
 ```
 
-## Configuration (Claude Desktop)
+## Claude Desktop Config
 
 ```json
 {
   "mcpServers": {
     "dataprivacy-ai": {
       "command": "python",
-      "args": ["/path/to/dataprivacy-ai-mcp/server.py"]
+      "args": ["server.py"],
+      "cwd": "/path/to/dataprivacy-ai-mcp"
     }
   }
 }
 ```
 
-## Domain Knowledge
+## Pricing
 
-- GDPR Articles 4, 6, 9, 10, 13, 14, 33, 34, 35, 45, 46, 49
-- UK Data Protection Act 2018
-- ICO breach reporting requirements (72-hour rule)
-- Adequacy decisions and EU-US Data Privacy Framework
-- Standard Contractual Clauses (2021 SCCs)
-- Legitimate Interests Assessment methodology
-- Special category data conditions (Article 9(2))
-- 60+ data field classifications
+| Plan | Price | Requests |
+|------|-------|----------|
+| Free | $0/mo | 50 requests/month |
+| Pro | $19/mo | 5,000 requests/month |
 
-## License
+[Get on MCPize](https://mcpize.com/mcp/dataprivacy-ai)
 
-MIT - see [LICENSE](LICENSE)
+## Part of MEOK AI Labs
+
+This is one of 255+ MCP servers by MEOK AI Labs. Browse all at [meok.ai](https://meok.ai) or [GitHub](https://github.com/CSOAI-ORG).
 
 ---
-
-[dataprivacyof.ai](https://dataprivacyof.ai) | [MEOK AI Labs](https://meok.ai)
+**MEOK AI Labs** | [meok.ai](https://meok.ai) | nicholas@meok.ai | United Kingdom
