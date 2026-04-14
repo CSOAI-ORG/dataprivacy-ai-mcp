@@ -7,6 +7,11 @@ international data transfer checks, breach severity scoring, and privacy
 notice generation. Covers UK GDPR and EU GDPR.
 """
 
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import time
 import uuid
 from datetime import datetime, timezone
@@ -306,7 +311,7 @@ _BREACH_FACTORS = {
 @mcp.tool()
 def classify_personal_data(
     fields: list[str],
-    context: str = "") -> dict:
+    context: str = "", api_key: str = "") -> dict:
     """Classify data fields as personal, special category, or anonymous per GDPR.
 
     Analyses a list of data field names and classifies each according to
@@ -322,6 +327,10 @@ def classify_personal_data(
     Returns:
         Classification of each field with GDPR article references and risk level.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded. Upgrade at https://dataprivacyof.ai/pricing"}
 
@@ -416,7 +425,7 @@ def assess_lawful_basis(
     data_subjects: str = "customers",
     is_public_authority: bool = False,
     existing_relationship: bool = False,
-    involves_children: bool = False) -> dict:
+    involves_children: bool = False, api_key: str = "") -> dict:
     """Determine appropriate lawful basis for processing personal data.
 
     Evaluates the six lawful bases under GDPR Article 6 and recommends
@@ -434,6 +443,10 @@ def assess_lawful_basis(
     Returns:
         Recommended lawful basis with justification, alternatives, and requirements.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded."}
 
@@ -561,7 +574,7 @@ def generate_dpia(
     automated_decision_making: bool = False,
     large_scale: bool = False,
     systematic_monitoring: bool = False,
-    new_technology: bool = False) -> dict:
+    new_technology: bool = False, api_key: str = "") -> dict:
     """Generate a Data Protection Impact Assessment template per GDPR Article 35.
 
     A DPIA is mandatory when processing is likely to result in a high risk
@@ -585,6 +598,10 @@ def generate_dpia(
         Complete DPIA template with risk assessment, necessity/proportionality analysis,
         and recommended mitigation measures.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded."}
 
@@ -736,7 +753,7 @@ def check_data_transfer(
     destination_country: str,
     transfer_mechanism: Optional[str] = None,
     data_types: Optional[list[str]] = None,
-    recipient_type: str = "processor") -> dict:
+    recipient_type: str = "processor", api_key: str = "") -> dict:
     """Assess legality of international personal data transfers under GDPR Chapter V.
 
     Evaluates whether a transfer to a non-UK/EU country is lawful by checking
@@ -755,6 +772,10 @@ def check_data_transfer(
     Returns:
         Transfer assessment with required safeguards and documentation.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded."}
 
@@ -900,7 +921,7 @@ def calculate_breach_severity(
     data_encrypted: bool = False,
     data_backed_up: bool = True,
     containment_time_hours: float = 24,
-    likely_consequences: str = "some_impact") -> dict:
+    likely_consequences: str = "some_impact", api_key: str = "") -> dict:
     """Score a data breach severity and determine ICO notification requirements.
 
     Assesses whether a breach must be reported to the ICO (within 72 hours
@@ -922,6 +943,10 @@ def calculate_breach_severity(
     Returns:
         Breach severity score, ICO notification requirement, and response checklist.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded."}
 
@@ -1053,7 +1078,7 @@ def generate_privacy_notice(
     international_transfers: bool = False,
     retention_period: str = "",
     automated_decisions: bool = False,
-    website_url: str = "") -> dict:
+    website_url: str = "", api_key: str = "") -> dict:
     """Generate an Article 13/14 compliant privacy notice.
 
     Creates a GDPR-compliant privacy notice covering all mandatory information
@@ -1077,6 +1102,10 @@ def generate_privacy_notice(
     Returns:
         Complete privacy notice text with all Article 13/14 mandatory sections.
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     if not _check_rate_limit():
         return {"error": "Rate limit exceeded."}
 

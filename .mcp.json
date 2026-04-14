@@ -1,25 +1,239 @@
 {
   "name": "dataprivacy-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Built by MEOK AI Labs | https://dataprivacyof.ai",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/dataprivacy-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for everyone.",
+  "version": "1.0.0",
   "tools": [
-    "classify_personal_data",
-    "assess_lawful_basis",
-    "generate_dpia",
-    "check_data_transfer",
-    "calculate_breach_severity",
-    "generate_privacy_notice"
-  ],
-  "categories": [
-    "Privacy",
-    "Compliance"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "classify_personal_data",
+      "description": "Classify data fields as personal, special category, or anonymous per GDPR.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "context": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "fields"
+        ]
+      }
+    },
+    {
+      "name": "assess_lawful_basis",
+      "description": "Determine appropriate lawful basis for processing personal data.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "processing_purpose": {
+            "type": "string"
+          },
+          "data_types": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "data_subjects": {
+            "type": "string"
+          },
+          "is_public_authority": {
+            "type": "boolean"
+          },
+          "existing_relationship": {
+            "type": "boolean"
+          },
+          "involves_children": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "processing_purpose",
+          "data_types"
+        ]
+      }
+    },
+    {
+      "name": "generate_dpia",
+      "description": "Generate a Data Protection Impact Assessment template per GDPR Article 35.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "project_name": {
+            "type": "string"
+          },
+          "processing_description": {
+            "type": "string"
+          },
+          "data_types": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "data_subjects": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "lawful_basis": {
+            "type": "string"
+          },
+          "automated_decision_making": {
+            "type": "boolean"
+          },
+          "large_scale": {
+            "type": "boolean"
+          },
+          "systematic_monitoring": {
+            "type": "boolean"
+          },
+          "new_technology": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "project_name",
+          "processing_description",
+          "data_types",
+          "data_subjects",
+          "purpose"
+        ]
+      }
+    },
+    {
+      "name": "check_data_transfer",
+      "description": "Assess legality of international personal data transfers under GDPR Chapter V.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "destination_country": {
+            "type": "string"
+          },
+          "transfer_mechanism": {
+            "type": "string",
+            "nullable": true
+          },
+          "data_types": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "recipient_type": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "destination_country"
+        ]
+      }
+    },
+    {
+      "name": "calculate_breach_severity",
+      "description": "Score a data breach severity and determine ICO notification requirements.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "data_types_affected": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "number_of_individuals": {
+            "type": "integer"
+          },
+          "breach_type": {
+            "type": "string"
+          },
+          "data_encrypted": {
+            "type": "boolean"
+          },
+          "data_backed_up": {
+            "type": "boolean"
+          },
+          "containment_time_hours": {
+            "type": "number"
+          },
+          "likely_consequences": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "data_types_affected",
+          "number_of_individuals"
+        ]
+      }
+    },
+    {
+      "name": "generate_privacy_notice",
+      "description": "Generate an Article 13/14 compliant privacy notice.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "controller_name": {
+            "type": "string"
+          },
+          "controller_contact": {
+            "type": "string"
+          },
+          "dpo_contact": {
+            "type": "string",
+            "nullable": true
+          },
+          "purposes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "lawful_bases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "data_categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "recipients": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "international_transfers": {
+            "type": "boolean"
+          },
+          "retention_period": {
+            "type": "string"
+          },
+          "automated_decisions": {
+            "type": "boolean"
+          },
+          "website_url": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "controller_name",
+          "controller_contact"
+        ]
+      }
+    }
+  ]
 }

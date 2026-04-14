@@ -1,10 +1,146 @@
 name: dataprivacy-ai-mcp
-description: "MEOK AI Labs — Built by MEOK AI Labs | https://dataprivacyof.ai"
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/dataprivacy-ai-mcp
-license: MIT
-categories: [Privacy, Compliance]
-tags: [data-privacy, gdpr, compliance, pii-detection, privacy-regulation]
-runtime: python
-entrypoint: server.py
+description: "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for\
+  \ everyone."
+version: 1.0.0
+tools:
+- name: classify_personal_data
+  description: Classify data fields as personal, special category, or anonymous per
+    GDPR.
+  parameters:
+  - name: fields
+    type: array
+    required: true
+  - name: context
+    type: string
+    required: false
+- name: assess_lawful_basis
+  description: Determine appropriate lawful basis for processing personal data.
+  parameters:
+  - name: processing_purpose
+    type: string
+    required: true
+  - name: data_types
+    type: array
+    required: true
+  - name: data_subjects
+    type: string
+    required: false
+  - name: is_public_authority
+    type: boolean
+    required: false
+  - name: existing_relationship
+    type: boolean
+    required: false
+  - name: involves_children
+    type: boolean
+    required: false
+- name: generate_dpia
+  description: Generate a Data Protection Impact Assessment template per GDPR Article
+    35.
+  parameters:
+  - name: project_name
+    type: string
+    required: true
+  - name: processing_description
+    type: string
+    required: true
+  - name: data_types
+    type: array
+    required: true
+  - name: data_subjects
+    type: string
+    required: true
+  - name: purpose
+    type: string
+    required: true
+  - name: lawful_basis
+    type: string
+    required: false
+  - name: automated_decision_making
+    type: boolean
+    required: false
+  - name: large_scale
+    type: boolean
+    required: false
+  - name: systematic_monitoring
+    type: boolean
+    required: false
+  - name: new_technology
+    type: boolean
+    required: false
+- name: check_data_transfer
+  description: Assess legality of international personal data transfers under GDPR
+    Chapter V.
+  parameters:
+  - name: destination_country
+    type: string
+    required: true
+  - name: transfer_mechanism
+    type: string
+    required: false
+  - name: data_types
+    type: array
+    required: false
+  - name: recipient_type
+    type: string
+    required: false
+- name: calculate_breach_severity
+  description: Score a data breach severity and determine ICO notification requirements.
+  parameters:
+  - name: data_types_affected
+    type: array
+    required: true
+  - name: number_of_individuals
+    type: integer
+    required: true
+  - name: breach_type
+    type: string
+    required: false
+  - name: data_encrypted
+    type: boolean
+    required: false
+  - name: data_backed_up
+    type: boolean
+    required: false
+  - name: containment_time_hours
+    type: number
+    required: false
+  - name: likely_consequences
+    type: string
+    required: false
+- name: generate_privacy_notice
+  description: Generate an Article 13/14 compliant privacy notice.
+  parameters:
+  - name: controller_name
+    type: string
+    required: true
+  - name: controller_contact
+    type: string
+    required: true
+  - name: dpo_contact
+    type: string
+    required: false
+  - name: purposes
+    type: array
+    required: false
+  - name: lawful_bases
+    type: array
+    required: false
+  - name: data_categories
+    type: array
+    required: false
+  - name: recipients
+    type: array
+    required: false
+  - name: international_transfers
+    type: boolean
+    required: false
+  - name: retention_period
+    type: string
+    required: false
+  - name: automated_decisions
+    type: boolean
+    required: false
+  - name: website_url
+    type: string
+    required: false
