@@ -15,10 +15,7 @@ from typing import Optional
 from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP(
-    "dataprivacy-ai",
-    version="1.0.0",
-    description="GDPR/privacy compliance AI - data classification, lawful basis, DPIA, breach assessment, privacy notices",
-)
+    "dataprivacy-ai")
 
 # ---------------------------------------------------------------------------
 # Rate limiting
@@ -309,8 +306,7 @@ _BREACH_FACTORS = {
 @mcp.tool()
 def classify_personal_data(
     fields: list[str],
-    context: str = "",
-) -> dict:
+    context: str = "") -> dict:
     """Classify data fields as personal, special category, or anonymous per GDPR.
 
     Analyses a list of data field names and classifies each according to
@@ -420,8 +416,7 @@ def assess_lawful_basis(
     data_subjects: str = "customers",
     is_public_authority: bool = False,
     existing_relationship: bool = False,
-    involves_children: bool = False,
-) -> dict:
+    involves_children: bool = False) -> dict:
     """Determine appropriate lawful basis for processing personal data.
 
     Evaluates the six lawful bases under GDPR Article 6 and recommends
@@ -566,8 +561,7 @@ def generate_dpia(
     automated_decision_making: bool = False,
     large_scale: bool = False,
     systematic_monitoring: bool = False,
-    new_technology: bool = False,
-) -> dict:
+    new_technology: bool = False) -> dict:
     """Generate a Data Protection Impact Assessment template per GDPR Article 35.
 
     A DPIA is mandatory when processing is likely to result in a high risk
@@ -742,8 +736,7 @@ def check_data_transfer(
     destination_country: str,
     transfer_mechanism: Optional[str] = None,
     data_types: Optional[list[str]] = None,
-    recipient_type: str = "processor",
-) -> dict:
+    recipient_type: str = "processor") -> dict:
     """Assess legality of international personal data transfers under GDPR Chapter V.
 
     Evaluates whether a transfer to a non-UK/EU country is lawful by checking
@@ -907,8 +900,7 @@ def calculate_breach_severity(
     data_encrypted: bool = False,
     data_backed_up: bool = True,
     containment_time_hours: float = 24,
-    likely_consequences: str = "some_impact",
-) -> dict:
+    likely_consequences: str = "some_impact") -> dict:
     """Score a data breach severity and determine ICO notification requirements.
 
     Assesses whether a breach must be reported to the ICO (within 72 hours
@@ -1061,8 +1053,7 @@ def generate_privacy_notice(
     international_transfers: bool = False,
     retention_period: str = "",
     automated_decisions: bool = False,
-    website_url: str = "",
-) -> dict:
+    website_url: str = "") -> dict:
     """Generate an Article 13/14 compliant privacy notice.
 
     Creates a GDPR-compliant privacy notice covering all mandatory information
