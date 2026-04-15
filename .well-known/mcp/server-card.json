@@ -1,0 +1,62 @@
+{
+  "name": "dataprivacy-ai",
+  "description": "\u0001",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/dataprivacy-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "classify_personal_data",
+      "description": "Classify data fields as personal, special category, or anonymous per GDPR."
+    },
+    {
+      "name": "assess_lawful_basis",
+      "description": "Determine appropriate lawful basis for processing personal data."
+    },
+    {
+      "name": "generate_dpia",
+      "description": "Generate a Data Protection Impact Assessment template per GDPR Article 35."
+    },
+    {
+      "name": "check_data_transfer",
+      "description": "Assess legality of international personal data transfers under GDPR Chapter V."
+    },
+    {
+      "name": "calculate_breach_severity",
+      "description": "Score a data breach severity and determine ICO notification requirements."
+    },
+    {
+      "name": "generate_privacy_notice",
+      "description": "Generate an Article 13/14 compliant privacy notice."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Data & Analytics",
+    "Security & Compliance"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
