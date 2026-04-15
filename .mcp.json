@@ -1,6 +1,6 @@
 {
   "name": "dataprivacy-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 \u0001",
+  "description": "Dataprivacy Ai automation via MCP. Includes classify personal data, assess lawful basis, generate dpia. By MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
