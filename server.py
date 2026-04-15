@@ -19,8 +19,7 @@ from typing import Optional
 
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP(
-    "dataprivacy-ai")
+mcp = FastMCP("dataprivacy-ai", instructions="")
 
 # ---------------------------------------------------------------------------
 # Rate limiting

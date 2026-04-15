@@ -10,10 +10,7 @@
         "type": "object",
         "properties": {
           "fields": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "array"
           },
           "context": {
             "type": "string"
@@ -34,10 +31,7 @@
             "type": "string"
           },
           "data_types": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "array"
           },
           "data_subjects": {
             "type": "string"
@@ -71,10 +65,7 @@
             "type": "string"
           },
           "data_types": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "array"
           },
           "data_subjects": {
             "type": "string"
@@ -117,15 +108,10 @@
             "type": "string"
           },
           "transfer_mechanism": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "data_types": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
+            "type": "array"
           },
           "recipient_type": {
             "type": "string"
@@ -143,10 +129,7 @@
         "type": "object",
         "properties": {
           "data_types_affected": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "array"
           },
           "number_of_individuals": {
             "type": "integer"
@@ -186,35 +169,19 @@
             "type": "string"
           },
           "dpo_contact": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "purposes": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+            "type": "array"
           },
           "lawful_bases": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
+            "type": "array"
           },
           "data_categories": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
+            "type": "array"
           },
           "recipients": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
+            "type": "array"
           },
           "international_transfers": {
             "type": "boolean"
