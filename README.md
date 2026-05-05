@@ -1,35 +1,38 @@
-# DataPrivacy AI MCP Server
+<div align="center">
 
-> By [MEOK AI Labs](https://meok.ai) — GDPR personal data classification, lawful basis assessment, DPIA generation, and breach scoring
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/dataprivacy-ai-mcp)](https://github.com/CSOAI-ORG/dataprivacy-ai-mcp/stargazers)
+
+# udataprivacyU aiU mcp
+
+****
+
+[![npm version](https://img.shields.io/npm/v/@meok-ai/dataprivacy-ai-mcp)](https://www.npmjs.com/package/@meok-ai/dataprivacy-ai-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
+
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/dataprivacy-ai-mcp/issues)
+
+</div>
+
+---
 
 ## Installation
 
 ```bash
 pip install dataprivacy-ai-mcp
+# or
+npm install -g @meok-ai/dataprivacy-ai-mcp
 ```
 
-## Usage
+## Quick Start
 
-```bash
-python server.py
-```
+See the project repository for full documentation and examples.
 
-## Tools
+## Enterprise Support
 
-This server provides comprehensive GDPR and privacy compliance tools:
-
-- Personal data classification per GDPR Article 4 and Article 9
-- Lawful basis assessment for data processing
-- Data Protection Impact Assessment (DPIA) generation
-- International data transfer compliance checks
-- Breach severity scoring and notification assessment
-- Privacy notice generation
-- UK GDPR and EU GDPR coverage
-
-## Authentication
-
-Free tier: 60 calls/hour. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
 ## License
 
-MIT — MEOK AI Labs
+MIT © [CSOAI](https://csoai.org)
