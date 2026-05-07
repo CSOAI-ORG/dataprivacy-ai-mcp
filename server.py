@@ -325,6 +325,21 @@ def classify_personal_data(
 
     Returns:
         Classification of each field with GDPR article references and risk level.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool for security assessment, threat detection, or vulnerability
+        analysis. Suitable for automated security scanning and risk evaluation.
+
+    When NOT to use:
+        Do not rely solely on this tool for production security decisions.
+        Always combine with manual security review.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -441,6 +456,21 @@ def assess_lawful_basis(
 
     Returns:
         Recommended lawful basis with justification, alternatives, and requirements.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool for security assessment, threat detection, or vulnerability
+        analysis. Suitable for automated security scanning and risk evaluation.
+
+    When NOT to use:
+        Do not rely solely on this tool for production security decisions.
+        Always combine with manual security review.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -596,6 +626,20 @@ def generate_dpia(
     Returns:
         Complete DPIA template with risk assessment, necessity/proportionality analysis,
         and recommended mitigation measures.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool for security assessment, threat detection, or vulnerability
+        analysis. Suitable for automated security scanning and risk evaluation.
+
+    When NOT to use:
+        Do not rely solely on this tool for production security decisions.
+        Always combine with manual security review.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -770,6 +814,21 @@ def check_data_transfer(
 
     Returns:
         Transfer assessment with required safeguards and documentation.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool for security assessment, threat detection, or vulnerability
+        analysis. Suitable for automated security scanning and risk evaluation.
+
+    When NOT to use:
+        Do not rely solely on this tool for production security decisions.
+        Always combine with manual security review.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -941,6 +1000,21 @@ def calculate_breach_severity(
 
     Returns:
         Breach severity score, ICO notification requirement, and response checklist.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool for security assessment, threat detection, or vulnerability
+        analysis. Suitable for automated security scanning and risk evaluation.
+
+    When NOT to use:
+        Do not rely solely on this tool for production security decisions.
+        Always combine with manual security review.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -1100,6 +1174,20 @@ def generate_privacy_notice(
 
     Returns:
         Complete privacy notice text with all Article 13/14 mandatory sections.
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool for security assessment, threat detection, or vulnerability
+        analysis. Suitable for automated security scanning and risk evaluation.
+
+    When NOT to use:
+        Do not rely solely on this tool for production security decisions.
+        Always combine with manual security review.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
