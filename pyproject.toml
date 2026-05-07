@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "dataprivacy-ai-mcp"
-version = "1.0.0"
+version = "1.0.2"
 description = "Dataprivacy Ai automation via MCP. Includes classify personal data, assess lawful basis, generate dpia. By MEOK AI Labs."
 license = {file = "LICENSE"}
 requires-python = ">=3.10"
