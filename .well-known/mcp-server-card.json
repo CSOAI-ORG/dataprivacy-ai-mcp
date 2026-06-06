@@ -1,0 +1,31 @@
+{
+  "name": "dataprivacy-ai-mcp",
+  "title": "Dataprivacy Ai Mcp",
+  "description": "Dataprivacy Ai automation via MCP. Includes classify personal data, assess lawful basis, generate dpia. By MEOK AI Labs.",
+  "version": "1.0.10",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "classify_personal_data"
+    },
+    {
+      "name": "assess_lawful_basis"
+    },
+    {
+      "name": "generate_dpia"
+    },
+    {
+      "name": "check_data_transfer"
+    },
+    {
+      "name": "calculate_breach_severity"
+    },
+    {
+      "name": "generate_privacy_notice"
+    }
+  ]
+}

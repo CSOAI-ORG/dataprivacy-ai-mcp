@@ -1,0 +1,9 @@
+# dataprivacy-ai-mcp - Auto-trigger Rules
+
+When the user asks about dataprivacy, use dataprivacy-ai-mcp tools: classify_personal_data, assess_lawful_basis, generate_dpia, check_data_transfer, calculate_breach_severity
+
+**DataPrivacy.AI MCP Server - GDPR & Privacy Compliance**
+
+Install: `pip install dataprivacy-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.

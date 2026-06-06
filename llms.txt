@@ -1,0 +1,39 @@
+# dataprivacy-ai-mcp
+# **DataPrivacy.AI MCP Server - GDPR & Privacy Compliance**
+
+## Install
+```bash
+pip install dataprivacy-ai-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `classify_personal_data`
+Classify data fields as personal, special category, or anonymous per GDPR.
+
+### `assess_lawful_basis`
+Determine appropriate lawful basis for processing personal data.
+
+### `generate_dpia`
+Generate a Data Protection Impact Assessment template per GDPR Article 35.
+
+### `check_data_transfer`
+Assess legality of international personal data transfers under GDPR Chapter V.
+
+### `calculate_breach_severity`
+Score a data breach severity and determine ICO notification requirements.
+
+### `generate_privacy_notice`
+Generate an Article 13/14 compliant privacy notice.
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.
