@@ -1,0 +1,24 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "dataprivacy-ai-mcp",
+    "description": "Dataprivacy Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.10",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "dataprivacy-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "classify_personal_data",
+      "assess_lawful_basis",
+      "generate_dpia",
+      "check_data_transfer",
+      "calculate_breach_severity",
+      "generate_privacy_notice"
+    ]
+  }
+}
