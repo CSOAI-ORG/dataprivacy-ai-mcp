@@ -4,9 +4,8 @@
   "version": "1.0.12",
   "description": "Dataprivacy Ai MCP Server by MEOK AI Labs",
   "repository": {
-    "type": "git",
     "url": "https://github.com/CSOAI-ORG/dataprivacy-ai-mcp",
-    "source": "https://github.com/CSOAI-ORG/dataprivacy-ai-mcp"
+    "source": "github"
   },
   "packages": [
     {
